@@ -91,9 +91,6 @@
 #define CHECKSUM_GEN_TCP 0
 /*----- Value in opt.h for CHECKSUM_GEN_ICMP6: 1 -----*/
 #define CHECKSUM_GEN_ICMP6 0
-
-#define CHECKSUM_GEN_ICMP               0
-
 /*----- Value in opt.h for CHECKSUM_CHECK_IP: 1 -----*/
 #define CHECKSUM_CHECK_IP 0
 /*----- Value in opt.h for CHECKSUM_CHECK_UDP: 1 -----*/

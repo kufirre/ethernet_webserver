@@ -54,11 +54,29 @@ static void MX_GPIO_Init(void);
 static void MX_ADC1_Init(void);
 static void MX_USART3_UART_Init(void);
 /* USER CODE BEGIN PFP */
-extern struct netif gnetif;
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+extern struct netif gnetif;
+
+/* re-target printf to UART3 */
+int __io_putchar(int ch)
+{
+	  HAL_UART_Transmit(&huart3, (uint8_t*)&ch, 1, 10);
+	  return ch;
+}
+
+//  int _write(int file, char *ptr, int len)
+//  {
+//	  int i = 0;
+//	  for (i = 0; i<len; i++)
+//	  {
+//		  ITM_SendChar(*(ptr++));
+//	  }
+//
+//	  return len;
+//  }
 
 /* USER CODE END 0 */
 
@@ -69,6 +87,7 @@ extern struct netif gnetif;
 int main(void)
 {
   /* USER CODE BEGIN 1 */
+	uint32_t sensor_value = 0;
 
   /* USER CODE END 1 */
 
@@ -106,6 +125,10 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+	  HAL_ADC_Start(&hadc1);
+	  sensor_value = HAL_ADC_GetValue(&hadc1);
+
+	  printf("Sensor_value: %ld \r\n", sensor_value);
 	  ethernetif_input(&gnetif);
 	  sys_check_timeouts();
 
