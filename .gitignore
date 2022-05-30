@@ -42,6 +42,11 @@
 *.idb
 *.pdb
 
+# Others
+*.mk
+*.list
+*.prefs
+
 # Kernel Module Compile Results
 *.mod*
 *.cmd
@@ -56,8 +61,6 @@ SI/
 cscope.*
 
 tags
-
-
 # *.crf
 
 src/MDK/LIST/*
