@@ -125,12 +125,13 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  HAL_ADC_Start(&hadc1);
-	  sensor_value = HAL_ADC_GetValue(&hadc1);
+//	  HAL_ADC_Start(&hadc1);
+//	  sensor_value = HAL_ADC_GetValue(&hadc1);
 
-	  printf("Sensor_value: %ld \r\n", sensor_value);
-	  ethernetif_input(&gnetif);
-	  sys_check_timeouts();
+//	  printf("Sensor_value: %ld \r\n", sensor_value);
+	  //ethernetif_input(&gnetif);
+	  //sys_check_timeouts();
+	  MX_LWIP_Process();
 
   }
   /* USER CODE END 3 */
