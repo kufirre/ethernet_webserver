@@ -22,6 +22,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "lwip/apps/httpd.h"
 
 /* USER CODE END Includes */
 
@@ -115,6 +116,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   HAL_GPIO_WritePin(GPIOB, GREEN_LED_Pin | RED_LED_Pin| BLUE_LED_Pin, GPIO_PIN_SET);
+  httpd_init();
 
   /* USER CODE END 2 */
 

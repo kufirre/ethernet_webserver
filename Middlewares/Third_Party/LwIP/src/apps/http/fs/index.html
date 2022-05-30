@@ -1,0 +1,57 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LED Controllers</title>
+    <style>
+        .led {
+            margin-top: 120px;
+        }
+        .led, .slider {
+            align-items: center;
+            text-align: center;
+        }
+        .btn {
+            display: inline-block;
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.781);
+            line-height: 320px;
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            margin: 30px;
+            vertical-align: middle;
+            overflow: hidden;
+            transition: 0.5s;
+        }
+        .blue {
+            background-color: rgb(0, 68, 255);
+        }
+        .green {
+            background-color: rgb(0, 128, 98);
+        }
+        .red {
+            background-color: rgb(255, 17, 0);
+        }
+        .slider {
+            margin-top: 60px;
+        }
+        #slider {
+            width: 640px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="led">
+            <a class="btn blue" href="#">On</a>
+            <a class="btn red" href="#">On</a>
+            <a class="btn green" href="#">On</a>
+        </section>
+        <section class="slider">
+            <input type="range" name="slider" id="slider">
+        </section>
+    </main>
+</body>
+</html>
