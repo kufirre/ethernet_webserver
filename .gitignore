@@ -70,3 +70,4 @@ src/MDK/OUT/*
 *.swp
 *.uvguix.*
 JLinkLog.txt
+Debug
