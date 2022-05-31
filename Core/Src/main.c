@@ -33,6 +33,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+#define NUM_TAGS 1
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -60,6 +61,8 @@ static void MX_USART3_UART_Init(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 extern struct netif gnetif;
+extern char const** tags;
+uint32_t g_sensor_value = 0;
 
 /* re-target printf to UART3 */
 int __io_putchar(int ch)
@@ -88,7 +91,6 @@ int __io_putchar(int ch)
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-	uint32_t sensor_value = 0;
 
   /* USER CODE END 1 */
 
@@ -118,6 +120,8 @@ int main(void)
   HAL_GPIO_WritePin(GPIOB, GREEN_LED_Pin | RED_LED_Pin| BLUE_LED_Pin, GPIO_PIN_SET);
   httpd_init();
 
+  http_set_ssi_handler(ssi_handler, tags, NUM_TAGS);
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -127,8 +131,8 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-//	  HAL_ADC_Start(&hadc1);
-//	  sensor_value = HAL_ADC_GetValue(&hadc1);
+	  HAL_ADC_Start(&hadc1);
+	  g_sensor_value = HAL_ADC_GetValue(&hadc1);
 
 //	  printf("Sensor_value: %ld \r\n", sensor_value);
 	  //ethernetif_input(&gnetif);

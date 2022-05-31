@@ -1,57 +1,57 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LED Controllers</title>
-    <style>
-        .led {
-            margin-top: 120px;
-        }
-        .led, .slider {
-            align-items: center;
-            text-align: center;
-        }
-        .btn {
-            display: inline-block;
-            text-decoration: none;
-            color: rgba(255, 255, 255, 0.781);
-            line-height: 320px;
-            width: 320px;
-            height: 320px;
-            border-radius: 50%;
-            margin: 30px;
-            vertical-align: middle;
-            overflow: hidden;
-            transition: 0.5s;
-        }
-        .blue {
-            background-color: rgb(0, 68, 255);
-        }
-        .green {
-            background-color: rgb(0, 128, 98);
-        }
-        .red {
-            background-color: rgb(255, 17, 0);
-        }
-        .slider {
-            margin-top: 60px;
-        }
-        #slider {
-            width: 640px;
-        }
-    </style>
-</head>
-<body>
-    <main>
-        <section class="led">
-            <a class="btn blue" href="#">On</a>
-            <a class="btn red" href="#">On</a>
-            <a class="btn green" href="#">On</a>
-        </section>
-        <section class="slider">
-            <input type="range" name="slider" id="slider">
-        </section>
-    </main>
+<!DOCTYPE html> 
+<html>
+ <head>
+ <title> Embedded Webserver Demo </title>
+<style>
+ html { font-family: Helvetica;display: inline-block;margin: 0px auto;text-align: center;width:100%}
+ body{ margin-top:  left: 50%}  h1{color: #444444;margin: 50px auto 30px;}h3{color: #444444;margin-bottom: 50px;}
+ .button{display: block;width: 80px;background-color:#1abc9c;border: none;color: white;padding: 13px 30px;
+	   text-decoration: none;
+	   font-size: 25px;
+	   margin: 30px 30px 30px 30px;
+	   cursor: pointer;
+	   border-radius: 4px;
+	   float: left;
+
+  }
+  .button-on{ background-color: #1abc77; left: 45%;-ms-transform: translateY(-50%);transform: translateY(-50%);position: absolute;}.button-on:active{background-color: #16a085;}
+  .button-off {background-color: #ff2200;}
+  .button-off:active{background-color: #ff0000;}{ font-size: 14px;color: #888;margin-bottom: 10px;}
+  .module_label{margin: 30px 30px 30px 30px;}
+  .wrapper {display: flex;}
+  .card {
+    background-color: #F8F7F9;;
+    padding-top:10px;
+    padding-bottom:20px;
+  }
+  .content {
+    padding: 30px;
+    max-width: auto;
+    margin: 0 auto;
+  }
+  
+  .state {
+     font-size: 1.1rem;
+     color:#8c8c8c;
+     font-weight: regular;
+	 padding : 10px
+   }
+ </style>
+ </head>
+ <body>
+ 	  <a href="https://www.rt-thread.io/"><img src="rtt1.png"
+	  border="0" alt="RT-Thread" title="RT-Thread logo"></a>
+      <h1> Ethernet-based Webserver by Kufirre Ebong</h1>
+ 
+ <div class="content">	  
+ <div class="card">
+  <p class="state">
+  <a href="https://www.rt-thread.io/">RT-Thread studio</a> is a one-stop development tool, it has easy-to-
+  use graphical configuration system and a wealth of software 
+  packages and components resources, which makes IoT 
+  development simple and efficient.</p>
+  </div>
+   </div>
+<a class="button button-on" href="potvalue.shtml">POT VALUE</a>
 </body>
 </html>

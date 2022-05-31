@@ -1,0 +1,91 @@
+<!DOCTYPE HTML><html>
+<head>
+  <title>EmbeddedExpertIO Remote Hardware Monitor</title>
+  <meta http-equiv="refresh" content ="2">
+  <link rel="icon" href="data:,">
+  <style>
+  html {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+  }
+  h1 {
+    font-size: 1.8rem;
+    color: white;
+  }
+  h2{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #143642;
+  }
+  .val{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #56565e;
+   }
+  
+  .topnav {
+    overflow: hidden;
+    background-color: #2b6680;
+  }
+  body {
+    margin: 0;
+  }
+  .content {
+    padding: 30px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .card {
+    background-color: #F8F7F9;;
+    padding-top:50px;
+    padding-bottom:50px;
+  }
+  
+  .image {
+    padding-top:50px;
+	padding-bottom:50px;
+	margin: 30px 30px 30px 30px;
+  }
+   .button{
+       display: block;
+	   width: 80px;
+	   background-color:#deb01b;
+	   border: none;
+	   color: white;
+	   padding: 13px 30px;
+	   text-decoration: none;
+	   font-size: 25px;
+	   margin: 30px 30px 30px 30px;
+	   cursor: pointer;
+	   border-radius: 4px;
+	   float: left;
+	   text-align: center;
+  }
+  .button-on{ background-color: #ff9999; left: 33%; position: relative;}.button-on:active{background-color: #16a085;}
+ 
+ 
+
+   .state {
+     font-size: 1.5rem;
+     color:#8c8c8c;
+     font-weight: bold;
+   }
+  </style>
+</head>
+<body>
+  <div class="topnav">
+    <h1>POTENTIOMETER READING </h1>
+  </div>
+  <img class="image" src="pot.png" height= "200" width= "200" border="0" alt="RT-Thread" title="RT-Thread logo">
+
+  <div class="content">
+    <div class="card">
+      <h2>POT VALUE: </h2>
+      <h2 class="val"><!--#SENSOR--></h2>
+	  <a class="button button-on" href="index.html">BACK</a>
+
+    </div>
+  </div>
+
+</body>
+</html>
