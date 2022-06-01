@@ -62,6 +62,8 @@ static void MX_USART3_UART_Init(void);
 /* USER CODE BEGIN 0 */
 extern struct netif gnetif;
 extern char const** tags;
+extern tCGI CGI_ARR[1];
+extern const tCGI LED_CGI;
 uint32_t g_sensor_value = 0;
 
 /* re-target printf to UART3 */
@@ -117,10 +119,15 @@ int main(void)
   MX_USART3_UART_Init();
   /* USER CODE BEGIN 2 */
 
-  HAL_GPIO_WritePin(GPIOB, GREEN_LED_Pin | RED_LED_Pin| BLUE_LED_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(GPIOB, GREEN_LED_Pin | RED_LED_Pin| BLUE_LED_Pin, GPIO_PIN_RESET);
   httpd_init();
 
+  /* set ssi handler */
   http_set_ssi_handler(ssi_handler, tags, NUM_TAGS);
+
+  /* set cgi handler */
+  CGI_ARR[0] = LED_CGI;
+  http_set_cgi_handlers(CGI_ARR,1);
 
   /* USER CODE END 2 */
 
@@ -133,10 +140,6 @@ int main(void)
     /* USER CODE BEGIN 3 */
 	  HAL_ADC_Start(&hadc1);
 	  g_sensor_value = HAL_ADC_GetValue(&hadc1);
-
-//	  printf("Sensor_value: %ld \r\n", sensor_value);
-	  //ethernetif_input(&gnetif);
-	  //sys_check_timeouts();
 	  MX_LWIP_Process();
 
   }

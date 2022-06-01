@@ -5,16 +5,19 @@
 <style>
  html { font-family: Helvetica;display: inline-block;margin: 0px auto;text-align: center;width:100%}
  body{ margin-top:  left: 50%}  h1{color: #444444;margin: 50px auto 30px;}h3{color: #444444;margin-bottom: 50px;}
- .button{display: block;width: 80px;background-color:#1abc9c;border: none;color: white;padding: 13px 30px;
+ .button{display: block;width: 200px;background-color:#1abc9c;border: none;color: white;padding: 13px 30px;
 	   text-decoration: none;
 	   font-size: 25px;
 	   margin: 30px 30px 30px 30px;
 	   cursor: pointer;
 	   border-radius: 4px;
 	   float: left;
-
+	   position: relative;
+	   left: 26%;
   }
-  .button-on{ background-color: #1abc77; left: 45%;-ms-transform: translateY(-50%);transform: translateY(-50%);position: absolute;}.button-on:active{background-color: #16a085;}
+  
+  
+  .button-on{ background-color: #1abc77;}.button-on:active{background-color: #16a085;}
   .button-off {background-color: #ff2200;}
   .button-off:active{background-color: #ff0000;}{ font-size: 14px;color: #888;margin-bottom: 10px;}
   .module_label{margin: 30px 30px 30px 30px;}
@@ -52,6 +55,10 @@
   development simple and efficient.</p>
   </div>
    </div>
-<a class="button button-on" href="potvalue.shtml">POT VALUE</a>
+   
+  <div>
+    <a class="button button-on" href="potvalue.shtml">POT VALUE</a>
+    <a class="button button-on" href="led_control.html">LEDS</a>
+ </div>
 </body>
 </html>

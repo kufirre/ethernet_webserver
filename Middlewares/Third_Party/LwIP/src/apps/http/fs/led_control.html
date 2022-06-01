@@ -1,0 +1,142 @@
+<!DOCTYPE HTML><html>
+<head>
+  <title>Remote LED Control</title>
+  <link rel="icon" href="data:,">
+  <style>
+  html {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+  }
+  h1 {
+    font-size: 1.8rem;
+    color: white;
+  }
+  h2{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #143642;
+  }
+  .val{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #00ff11;
+   }
+  
+  .topnav {
+    overflow: hidden;
+    background-color: #581845;
+  }
+  body {
+    margin: 0;
+  }
+  .content {
+    padding: 30px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .card {
+    background-color: #F8F7F9;;
+    padding-top:50px;
+    padding-bottom:50px;
+  }
+  
+  .image {
+    padding-top:50px;
+	padding-bottom:50px;
+	margin: 30px 30px 30px 30px;
+  }
+   .button{
+       display: block;
+	   width: 80px;
+	   background-color:#deb01b;
+	   border: none;
+	   color: white;
+	   padding: 13px 30px;
+	   text-decoration: none;
+	   font-size: 25px;
+	   margin: 30px 30px 30px 30px;
+	   cursor: pointer;
+	   border-radius: 4px;
+	   float: left;
+  }
+  
+     .exitbtn{
+       display: block;
+	   width: 50px;
+	   height: 20px;
+	   background-color:#631759;
+	   border: none;
+	   color: white;
+	   padding: 13px 30px;
+	   text-decoration: none;
+	   font-size: 22px;
+	   margin: 30px 30px 30px 30px;
+	   margin-bottom: 60px;
+	   cursor: pointer;
+	   border-radius: 4px;
+	   float: none;
+	   left: 44%;
+	   position: relative;
+  }
+  
+     input.btn{
+       display: block;
+	   width: 200px;
+	   background-color:#5B2C6F;
+	   border: none;
+	   color: white;
+	   padding: 13px 30px;
+	   text-decoration: none;
+	   font-size: 25px;
+	   margin: 30px 30px 30px 30px;
+	   cursor: pointer;
+	   border-radius: 4px;
+	   float: left;
+	   left: 28%;
+	   position: relative;
+	   transition: 0.5s;
+  }
+  
+
+}
+
+  .button-on{ background-color: #ff9999; left: 40%;position: absolute;}.button-on:active{background-color: #16a085;}
+ 
+       input.largerCheckbox {
+            width: 40px;
+            height: 40px;
+        }
+
+   .state {
+     font-size: 1.5rem;
+     color:#8c8c8c;
+     font-weight: bold;
+   }
+  </style>
+</head>
+<body>
+  <div class="topnav">
+    <h1>LED CONTROL SERVER </h1>
+  </div>
+
+  <img class="image" src="led-bulb.png" height= "200" width= "200" border="0" alt="RT-Thread" title="RT-Thread logo">
+
+  <div class="content">
+    <div class="card">
+	  <form method="get" action="/leds.cgi">
+	  <table style="width:100%">
+	  <tr>
+			<td><input value="1" name="led" type="checkbox" class="largerCheckbox" ><h2>RED</h2><br></td>
+   			<td><input value="2" name="led" type="checkbox" class="largerCheckbox" ><h2>BLUE</h2><br></td>
+			<td><input value="3" name="led" type="checkbox" class="largerCheckbox" ><h2>GREEN</h2><br></td>
+	   </tr>
+      </table>	
+	  			<input value ="Send" type="submit" class="btn">
+      </form>
+    </div>
+	
+  </div>
+    	 <a class="exitbtn" href="index.html">Home</a><br>
+
+</body>
+</html>
